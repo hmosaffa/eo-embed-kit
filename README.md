@@ -4,7 +4,7 @@
 
 ## What is this?
 
-AI models like **AlphaEarth** (Google DeepMind) and **TESSERA** (Univ. of Cambridge)
+Earth Observation Foundation models like **AlphaEarth** (Google DeepMind) and **TESSERA** (Univ. of Cambridge)
 have already "looked at" every 10 m patch of Earth and written a numeric summary
 of it: 64 or 128 numbers per pixel, called an *embedding*. These summaries are
 amazing for mapping (land cover, crops, forests, change detection) you can train
