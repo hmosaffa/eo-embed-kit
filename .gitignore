@@ -1,0 +1,8 @@
+__pycache__/
+*.egg-info/
+.venv/
+data/
+*.zarr/
+*.parquet
+*.tif
+.ipynb_checkpoints/

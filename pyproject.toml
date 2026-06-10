@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "eo-embed-kit"
+version = "0.1.0"
+description = "Unified, lazy, HPC-friendly access to Earth-observation foundation-model embeddings (AlphaEarth, TESSERA)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Hamidreza Mosaffa" }]
+keywords = ["earth-observation", "embeddings", "foundation-models", "geospatial", "zarr"]
+
+dependencies = [
+  "numpy",
+  "xarray",
+  "dask[array]",
+  "zarr",
+  "geopandas",
+  "shapely",
+  "pyproj",
+  "pyarrow",
+  "scikit-learn",
+  "tqdm",
+]
+
+[project.optional-dependencies]
+alphaearth = ["earthengine-api", "xee", "rioxarray", "rasterio", "s3fs"]
+tessera    = ["geotessera", "rioxarray", "rasterio"]
+hpc        = ["dask-jobqueue", "distributed"]
+ml         = ["faiss-cpu"]
+all = [
+  "eo-embed-kit[alphaearth,tessera,hpc,ml]",
+]
+
+[project.urls]
+Homepage = "https://github.com/hmosaffa/eo-embed-kit"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/eoembed"]
